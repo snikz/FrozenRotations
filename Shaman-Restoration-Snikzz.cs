@@ -56,12 +56,7 @@ namespace Frozen.Rotation
                     {
                         WoW.CastSpell("Riptide");
                         return;
-                    }/*
-                    if (WoW.CanCast("Earthen Shield Totem"))
-                    {
-                        WoW.CastSpell("Earthen Shield Totem");
-                        return;
-                    }*/
+                    }
                     if (WoW.CanCast("Cloudburst Totem"))
                     {
                         WoW.CastSpell("Cloudburst Totem");
@@ -70,11 +65,6 @@ namespace Frozen.Rotation
                     if (WoW.CanCast("Healing Stream Totem"))
                     {
                         WoW.CastSpell("Healing Stream Totem");
-                        return;
-                    }
-                    if (WoW.CanCast("Spirit Link Totem") && WoW.CountAlliesUnderHealthPercentage(40) >= 8)
-                    {
-                        WoW.CastSpell("Spirit Link Totem");
                         return;
                     }
                     if (WoW.CanCast("Healing Tide Totem") && WoW.CountAlliesUnderHealthPercentage(60) >= 6)

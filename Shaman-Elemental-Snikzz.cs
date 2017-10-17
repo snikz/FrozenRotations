@@ -77,11 +77,11 @@ namespace Frozen.Rotation
                         WoW.CastSpell("Elemental Blast");
                         return;
                     }
-                    if(WoW.Talent(7) == 3 && WoW.CanCast("Icefury") && WoW.Maelstrom < 101)
+                    if (WoW.Talent(7) == 3 && WoW.CanCast("Icefury") && WoW.Maelstrom < 101)
                     {
                         WoW.CastSpell("Icefury");
                     }
-                    if(WoW.PlayerHasBuff("Icefury") && WoW.Maelstrom >= 20 && WoW.CanCast("Frost Shock"))
+                    if (WoW.PlayerHasBuff("Icefury") && WoW.Maelstrom >= 20 && WoW.CanCast("Frost Shock"))
                     {
                         WoW.CastSpell("Frost Shock");
                     }
@@ -90,7 +90,7 @@ namespace Frozen.Rotation
                         WoW.CastSpell("Earth Shock");
                         return;
                     }
-					if (WoW.CanCast("Lava Burst") && WoW.PlayerHasBuff("Lava Surge"))
+                    if (WoW.CanCast("Lava Burst") && WoW.PlayerHasBuff("Lava Surge"))
                     {
                         WoW.CastSpell("Lava Burst");
                         return;
