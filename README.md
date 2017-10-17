@@ -28,6 +28,7 @@ Supported builds
 Note:
 Only in alpha. Will not recommend using it in anything above TOS normal.
 Ancestral Guidance(if selected), Healing rain, Gift of the Queen and Spirit Link Totem must be manually casted. Recommend using macro;
+
 #showtooltip
 /cast [@cursor] Gift of the Queen
 #showtooltip
