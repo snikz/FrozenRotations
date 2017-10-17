@@ -179,7 +179,6 @@ namespace Frozen.Rotation
                 WoW.CastSpell("Flametongue");
                 return;
             }
-            Log.Write("Can cast feralspirit? " + WoW.IsSpellOnGCD("Feral Spirit") + " " + WoW.CanCast("Feral Spirit") + " " + feralSpiritOpener + " " + flametongueOpener + " " + rockbiterOpener + " " + WoW.IsSpellOnCooldown("Feral Spirit"));
             if (WoW.CanCast("Feral Spirit") && !PetsCd.IsRunning && !feralSpiritOpener && flametongueOpener && rockbiterOpener)
             {
                 feralSpiritOpener = true;
