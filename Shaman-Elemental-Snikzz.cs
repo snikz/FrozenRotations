@@ -1,4 +1,4 @@
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using Frozen.Helpers;
 
@@ -10,7 +10,7 @@ namespace Frozen.Rotation
 
         public override void Initialize()
         {
-            Log.Write("Supported build: 3112331", Color.Green);
+            Log.Write("Supported build: 3002331, 3002332, 3002333", Color.Green);
             Log.Write("Frozen Elemental");
         }
 
@@ -159,8 +159,8 @@ namespace Frozen.Rotation
 
 /*
 [AddonDetails.db]
-AddonAuthor=Toomicek
-AddonName=Frozen
+AddonAuthor=Snikzz
+AddonName=Snikzz
 WoWVersion=Legion - 70300
 [SpellBook.db]  
 Spell,188389,Flame Shock,D3

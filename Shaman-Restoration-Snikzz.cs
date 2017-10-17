@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Frozen.Helpers;
@@ -14,8 +14,8 @@ namespace Frozen.Rotation
 
         public override void Initialize()
         {
-            Log.Write("Supported build: 3312111", Color.Green);
-            Log.Write("Frozen Enhancement");
+            Log.Write("Supported build: 3000123", Color.Green);
+            Log.Write("Frozen Restoration");
         }
 
         public override void Stop()
@@ -98,8 +98,8 @@ namespace Frozen.Rotation
 
 /*
 [AddonDetails.db]
-AddonAuthor=Hamuel
-AddonName=Frozen
+AddonAuthor=Snikzz
+AddonName=Snikzz
 WoWVersion=Legion - 70300
 [SpellBook.db]
 Spell,77472,Healing Wave
