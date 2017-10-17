@@ -31,7 +31,9 @@ Ancestral Guidance(if selected), Healing rain, Gift of the Queen and Spirit Link
 
 #showtooltip
 /cast [@cursor] Gift of the Queen
+
 #showtooltip
 /cast [@cursor] Healing Rain
+
 #showtooltip
 /cast [@cursor] Spirit Link Totem
