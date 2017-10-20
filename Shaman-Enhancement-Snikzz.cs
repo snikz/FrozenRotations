@@ -10,6 +10,7 @@ namespace Frozen.Rotation
         private Stopwatch Crash = new Stopwatch();
         private Stopwatch Pets = new Stopwatch();
         private Stopwatch PetsCd = new Stopwatch();
+		private int stopwatchMinutes = 0;
         private bool useOpener = true;
 
         private bool rockbiterOpener = false;
@@ -18,12 +19,14 @@ namespace Frozen.Rotation
         private bool crashLightningOpener = false;
         private bool doomWindsOpener = false;
         private bool stormStrikeOpener = false;
-        private bool ascendanceOpener = false;
+		private bool ascendanceOpener = false;
+		
 
         public override Form SettingsForm { get; set; }
 
         public override void OutOfCombatPulse()
         {
+			TimerReset();
             resetOpenerState();
             base.OutOfCombatPulse();
         }
@@ -48,6 +51,7 @@ namespace Frozen.Rotation
             doomWindsOpener = false;
             stormStrikeOpener = false;
             ascendanceOpener = false;
+			
         }
 
         public void TimerReset()
@@ -60,9 +64,18 @@ namespace Frozen.Rotation
             {
                 Pets.Reset();
             }
-            if(PetsCd.Elapsed.Seconds >= 120)
+			if(PetsCd.Elapsed.Seconds >= 59)
             {
+				int tempCounter = PetsCd.Elapsed.Seconds;
                 PetsCd.Reset();
+				stopwatchMinutes++;
+				if(stopwatchMinutes < 2){
+					PetsCd.Start();
+				} else if(stopwatchMinutes == 2 && tempCounter <= 2){
+					PetsCd.Start();
+				} else{
+					stopwatchMinutes = 0;
+				}
             }
         }
 
@@ -92,13 +105,14 @@ namespace Frozen.Rotation
                             WoW.CastSpell("Rockbiter");
                             return;
                         }
-                        if (WoW.CanCast("Feral Spirit") && !PetsCd.IsRunning && WoW.CooldownsOn)
-                        {
-                            Pets.Start();
-                            PetsCd.Start();
-                            WoW.CastSpell("Feral Spirit");
-                            return;
-                        }
+						//Log.Write("Elapsed time is " + stopwatchMinutes + " minutes and " + PetsCd.Elapsed.Seconds + " seconds");
+						if (WoW.CanCast("Feral Spirit") && !PetsCd.IsRunning && WoW.CooldownsOn) 
+						{
+							Pets.Start();
+							PetsCd.Start();
+							WoW.CastSpell("Feral Spirit");
+							return;
+						}
                         if (WoW.CanCast("Crash Lightning") && Pets.IsRunning && !Crash.IsRunning)
                         {
                             Crash.Start();
@@ -185,6 +199,7 @@ namespace Frozen.Rotation
                 Pets.Start();
                 PetsCd.Start();
                 WoW.CastSpell("Feral Spirit");
+				crashLightningOpener = false;
                 return;
             }
             else if(PetsCd.IsRunning)
@@ -267,7 +282,7 @@ Spell,142173,Collapsing Futures,F12
 Aura,194084,Flametongue
 Aura,196834,Frostbrand
 Aura,187878,Crashing Storm
-Aura,187874,Crash lightning
+Aura,187874,Crash Lightning
 Aura,201846,Stormbringer
 Aura,202004,Landslide
 Aura,204945,Doom Winds
